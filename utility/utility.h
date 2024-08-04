@@ -1,6 +1,15 @@
 #ifndef UTILITY_H
 #define UTILITY_H
 
-void print_message();
+
+// Create a simple class
+
+class Utility
+{
+public:
+    Utility();
+    ~Utility();
+    void print_message();
+};
 
 #endif // UTILITY_H

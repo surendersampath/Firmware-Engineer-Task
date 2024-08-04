@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
     cout << "Hello World\n";
-    print_message();
+    Utility utility;
+    utility.print_message();
     return 0;
 }
