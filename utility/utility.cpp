@@ -18,12 +18,13 @@ Utility::~Utility() {
 
 bool Utility::setBit(uint8_t index) 
 {
-
+    /* Check if the index is within the range of 0-255*/
     if (index >= 256) {
         return false;
     }
 
-    std::lock_guard<std::mutex> lock(mtx);
+    /* Ensure mutex is locked.*/
+    std::lock_guard<std::mutex> lock(mtx);  
     BITMAP[index / 8] |= (1 << (index % 8));
     return true;
 }
@@ -31,11 +32,13 @@ bool Utility::setBit(uint8_t index)
 // Method to clear the bit at a specific index
 bool Utility::clearBit(uint8_t index) 
 {
+    /* Check if the index is within the range of 0-255*/
     if (index >= 256) {
         return false;
     }
 
-    std::lock_guard<std::mutex> lock(mtx);
+    /* Ensure mutex is locked.*/
+    std::lock_guard<std::mutex> lock(mtx);  
     BITMAP[index / 8] &= ~(1 << (index % 8));
     return true;
 }
@@ -43,13 +46,14 @@ bool Utility::clearBit(uint8_t index)
 // Method to get the value of the bit at a specific index
 bool Utility::getBit(uint8_t index) 
 {
+    /* Check if the index is within the range of 0-255*/
     if (index >= 256) {
         return false;
     }
 
-    std::lock_guard<std::mutex> lock(mtx);
-    BITMAP[index / 8] & (1 << (index % 8));
-    return true;
+    /* Ensure mutex is locked.*/
+    std::lock_guard<std::mutex> lock(mtx);  
+    return BITMAP[index / 8] & (1 << (index % 8));
 }
 
 } // namespace bitops
