@@ -12,6 +12,7 @@ Utility::Utility() {
 
 // Destructor
 Utility::~Utility() {
+    /* UnLock the mutex before destroying the object */
     mtx.unlock();
 }
 
@@ -23,7 +24,8 @@ bool Utility::setBit(uint8_t index)
     }
 
     std::lock_guard<std::mutex> lock(mtx);
-    return BITMAP[index / 8] |= (1 << (index % 8));
+    BITMAP[index / 8] |= (1 << (index % 8));
+    return true;
 }
 
 // Method to clear the bit at a specific index
@@ -34,7 +36,8 @@ bool Utility::clearBit(uint8_t index)
     }
 
     std::lock_guard<std::mutex> lock(mtx);
-    return BITMAP[index / 8] &= ~(1 << (index % 8));
+    BITMAP[index / 8] &= ~(1 << (index % 8));
+    return true;
 }
 
 // Method to get the value of the bit at a specific index
@@ -45,7 +48,8 @@ bool Utility::getBit(uint8_t index)
     }
 
     std::lock_guard<std::mutex> lock(mtx);
-    return BITMAP[index / 8] & (1 << (index % 8));
+    BITMAP[index / 8] & (1 << (index % 8));
+    return true;
 }
 
 } // namespace bitops
