@@ -28,6 +28,19 @@
                 "color": "#4caf50",
                 "command": "cd build && ./main/main_exe && cd ..",
                 "isShellCommand": true
+              },
+              {
+                "name": "Run Tests",
+                "singleInstance": true,
+                "color": "#acd108",
+                "command": "cd build && ./tests/UtilityTests && cd ..",
+                "isShellCommand": true
+              },
+              {
+                "name": "Clean Build",
+                "singleInstance": true,
+                "color": "#f44336",
+                "command": "rm -rf build"
               }
             ]
           }
