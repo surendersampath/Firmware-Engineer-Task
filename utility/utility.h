@@ -4,8 +4,18 @@
 // Include the necessary libraries
 #include <mutex>
 
+/**
+ * \brief Represents a Bit Operations Utility.
+ *
+ * This class provides utility functions for performing bit operations.
+ */
 namespace bitops
 {
+    /**
+     * \brief Represents a Bit Operations Utility.
+     *
+     * This class provides utility functions for performing bit operations.
+     */
     class Utility
     {
         private:
@@ -16,17 +26,38 @@ namespace bitops
             std::mutex mtx;
             
         public:
-            // Constructor and Destructor
+            /**
+             * \brief Default constructor.
+             */
             Utility();
+
+            /**
+             * \brief Destructor.
+             */
             ~Utility();
 
-            /* Method to set the nth bit.*/
+            /**
+             * \brief Set the nth bit.
+             *
+             * \param index The index of the bit to set.
+             * \return True if the bit was set successfully, false otherwise.
+             */
             bool setBit(uint8_t index);
 
-            /* Method to clear the nth at a specific index. */
+            /**
+             * \brief Clear the nth bit at a specific index.
+             *
+             * \param index The index of the bit to clear.
+             * \return True if the bit was cleared successfully, false otherwise.
+             */
             bool clearBit(uint8_t index);
 
-            /* Method to get the value of the nthbit at a specific index. */
+            /**
+             * \brief Get the value of the nth bit at a specific index.
+             *
+             * \param index The index of the bit to get.
+             * \return The value of the bit at the specified index.
+             */
             bool getBit(uint8_t index);
     };
 
