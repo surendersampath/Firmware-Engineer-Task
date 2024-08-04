@@ -6,10 +6,11 @@
 # spaces.
 INPUT                  = README.md utility
 
+
 # If the value of the INPUT tag contains directories, you can use the FILE_PATTERNS
 # tag to specify one or more wildcard patterns (like *.cpp and *.h) to filter out the
 # source-files in the directories. If left blank, Doxygen will consider all files.
-FILE_PATTERNS          = *.cpp *.h
+FILE_PATTERNS          = *.cpp *.h *.md
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should be
 # searched for input files as well.
@@ -19,3 +20,6 @@ RECURSIVE              = YES
 # which the generated documentation will be written. If a relative path is entered,
 # it will be relative to the location where doxygen was started.
 OUTPUT_DIRECTORY       = docs
+
+# Use the README.md file as the main page
+USE_MDFILE_AS_MAINPAGE = README.md
