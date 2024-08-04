@@ -12,5 +12,8 @@ jobs:
       - name: Configure and Build Project
         uses: threeal/cmake-action@main
 
+      - name: List Build Directory
+        run: ls -R .
+
       - name: Run Tests
         run: ctest --output-on-failure
