@@ -30,6 +30,8 @@ echo "Installing CMake..."
 apt-get -y purge --auto-remove cmake
 mkdir -p /opt/cmake
 
+
+
 architecture=$(dpkg --print-architecture)
 case "${architecture}" in
     arm64)
