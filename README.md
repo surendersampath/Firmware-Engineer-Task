@@ -45,7 +45,7 @@ Commands have been configured within VS code to build and run app/tests.
 ![image](https://github.com/user-attachments/assets/605a0e17-a949-42c1-9b98-bebdfe5ab478)
 
 
-## Integerated CI/CD
+## Continous Integeration and Testing
 This repo uses github actions to perform automated test on commit.
 ![image](https://github.com/user-attachments/assets/11bccd33-ca78-4632-af21-174440e9f1a0)
 
