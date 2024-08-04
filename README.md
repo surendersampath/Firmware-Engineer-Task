@@ -1,7 +1,7 @@
-# ABOUT
+# About
 Thread safe class for managing large dataset.
  
- ## Features
+ ## API's
 
 - **Set Bit**: Set the value of a specific bit.
 - **Clear Bit**: Clear the value of a specific bit.
@@ -12,7 +12,7 @@ Thread safe class for managing large dataset.
 To use the Bit Operations Utility, include the `utility.h` file in your project.
 
 
-## Documenation
+## Documentation
 
 This is generated using doxygen. Open index.html inside docs/html
 To re-run doxygen
@@ -40,7 +40,7 @@ ctest
 ## Usage - To run inside codespace.
 
 Open codespace from the main branch. It will take a moment to pull images and build for the first time.
-Command have been created withing VS code short cuts.
+Commands have been configured within VS code to build and run app/tests.
 
 ![image](https://github.com/user-attachments/assets/605a0e17-a949-42c1-9b98-bebdfe5ab478)
 
