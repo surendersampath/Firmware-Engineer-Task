@@ -13,3 +13,4 @@ endif()
 
 # Link the main executable with the utility library
 target_link_libraries(main_exe PRIVATE utility)
+

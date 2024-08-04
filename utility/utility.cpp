@@ -1,17 +1,51 @@
 #include "utility.h"
 #include <iostream>
+#include <stdexcept>
+
+namespace bitops {
 
 // Constructor
 Utility::Utility() {
-    // Constructor implementation (if needed)
+    // Initialize BITMAP with all zeros
+    std::fill(std::begin(BITMAP), std::end(BITMAP), 0);
 }
 
 // Destructor
 Utility::~Utility() {
-    // Destructor implementation (if needed)
+    mtx.unlock();
 }
 
-// Method to print a message
-void Utility::print_message() {
-    std::cout << "Hello from Utility class!" << std::endl;
+bool Utility::setBit(uint8_t index) 
+{
+
+    if (index >= 256) {
+        return false;
+    }
+
+    std::lock_guard<std::mutex> lock(mtx);
+    return BITMAP[index / 8] |= (1 << (index % 8));
 }
+
+// Method to clear the bit at a specific index
+bool Utility::clearBit(uint8_t index) 
+{
+    if (index >= 256) {
+        return false;
+    }
+
+    std::lock_guard<std::mutex> lock(mtx);
+    return BITMAP[index / 8] &= ~(1 << (index % 8));
+}
+
+// Method to get the value of the bit at a specific index
+bool Utility::getBit(uint8_t index) 
+{
+    if (index >= 256) {
+        return false;
+    }
+
+    std::lock_guard<std::mutex> lock(mtx);
+    return BITMAP[index / 8] & (1 << (index % 8));
+}
+
+} // namespace bitops

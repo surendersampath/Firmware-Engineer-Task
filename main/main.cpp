@@ -5,8 +5,12 @@
 using namespace std;
 
 int main() {
-    cout << "Hello World\n";
-    Utility utility;
-    utility.print_message();
+    bitops::Utility utility;
+    utility.setBit(234);
+    cout << utility.getBit(10) << endl;
+    utility.clearBit(10);
+    cout << utility.getBit(10) << endl;
+    cout << utility.getBit(234) << endl;
+    
     return 0;
 }
