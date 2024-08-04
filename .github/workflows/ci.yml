@@ -14,8 +14,10 @@ jobs:
 
       - name: Run Tests
         run: cd build && ctest --output-on-failure
+      
 
-      - name: Doxygen
+      - name: Doxgen Documentation
       - uses: DenverCoder1/doxygen-github-pages-action@v1.3.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      
