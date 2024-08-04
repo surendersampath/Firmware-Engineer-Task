@@ -1,21 +1,16 @@
-name: Doxygen Action test
-
+name: Build
 on:
   push:
-    branches: [main]
-
 jobs:
-  build:
+  build-project:
+    name: Brompton Firmware Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Doxygen Action
-        uses: mattnotmitt/doxygen-action@v1.1.0
-        with:
-          doxyfile-path: "./Doxyfile"
-          working-directory: "."
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./generated-docs/html
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+
+      - name: Configure and Build Project
+        uses: threeal/cmake-action@main
+
+      - name: Run Tests
+        run: ctest --output-on-failure
