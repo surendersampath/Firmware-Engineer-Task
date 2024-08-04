@@ -14,7 +14,7 @@ To use the Bit Operations Utility, include the `utility.h` file in your project.
 
 ## Documentation
 
-This is generated using doxygen. Open index.html inside docs/html
+This is generated using doxygen. [Click here to open](https://surendersampath.github.io/Firmware-Engineer-Task/) .
 To re-run doxygen
 ```
 doxygen Doxyfile
