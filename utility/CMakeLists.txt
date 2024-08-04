@@ -17,5 +17,3 @@ add_library(utility STATIC
 # Include directories for the library
 target_include_directories(utility PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-# Add any dependencies if required (e.g., external libraries)
-# target_link_libraries(utility PUBLIC some_dependency)

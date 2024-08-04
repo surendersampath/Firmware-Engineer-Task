@@ -1,5 +1,8 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/cpp:debian",
+    "name": "C++",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
     "customizations": {
       "vscode": {
         "extensions": [
@@ -23,16 +26,9 @@
                 "name": "Run Application",
                 "singleInstance": true,
                 "color": "#4caf50",
-                "command": "cd build && ./main/main && cd ..",
+                "command": "cd build && ./main/main_exe && cd ..",
                 "isShellCommand": true
-              },
-              {
-                "name": "Build and Run Unit Tests",
-                "singleInstance": true,
-                "color": "#2196F3",
-                "command": "[[ -d build ]] || mkdir build && cd build && cmake .. && cmake --build . --target test && ctest --output-on-failure"
               }
-              
             ]
           }
         }

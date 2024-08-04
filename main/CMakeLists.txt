@@ -1,7 +1,5 @@
-add_executable(main
-    main.c
+add_executable(main_exe
+    main.cpp
 )
 
-target_link_libraries(main
-    utility
-)
+target_link_libraries(main_exe PRIVATE utility)

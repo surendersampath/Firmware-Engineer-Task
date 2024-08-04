@@ -1,24 +1,15 @@
-project("Brompton Bicycles" CXX)
 cmake_minimum_required(VERSION 3.0)
+project("Brompton Bicycles" C CXX)
 
-# Set the C++ standard to C++17 (or your preferred version)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Add the subdirectory for the motor controller
+# Add subdirectories for the different parts of the project
 add_subdirectory(utility)
-
-# Add the subdirectory for the main application
 add_subdirectory(main)
-message("Building application")
 
-# Include CTest for test discovery and execution
-include(CTest)
+# Set policy CMP0079 to NEW to allow linking targets across directories
+if(POLICY CMP0079)
+  cmake_policy(SET CMP0079 NEW)
+endif()
 
-# Add the subdirectory for external dependencies
-add_subdirectory(external)
-
-# Add the subdirectory for the test suite
-add_subdirectory(test)
-message("Building test suite")
+# Link the main executable with the utility library
+target_link_libraries(main_exe PRIVATE utility)
