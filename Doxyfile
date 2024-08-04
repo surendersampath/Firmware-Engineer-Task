@@ -21,5 +21,10 @@ RECURSIVE              = YES
 # it will be relative to the location where doxygen was started.
 OUTPUT_DIRECTORY       = docs
 
+# The HTML_OUTPUT tag is used to specify where the HTML docs will be put. If a
+# relative path is entered the value of OUTPUT_DIRECTORY will be put in front of it.
+# The default directory is `html'.
+HTML_OUTPUT = .
+
 # Use the README.md file as the main page
 USE_MDFILE_AS_MAINPAGE = README.md
